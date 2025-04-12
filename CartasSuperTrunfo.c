@@ -1,22 +1,70 @@
 #include <stdio.h>
+#include <stdlib.h>
 
-// Desafio Super Trunfo - Países
-// Tema 1 - Cadastro das Cartas
-// Este código inicial serve como base para o desenvolvimento do sistema de cadastro de cartas de cidades.
-// Siga os comentários para implementar cada parte do desafio.
-//Teste larissa
+typedef struct Carta {
+    char estado[3];
+    char codigo[50];
+    char cidade[50];
+    int populacao;
+    int area;
+    double pib;
+    int turist;
+    };
+
+//Função para limpeza de Buffer
+void buf() {
+int ch;
+while ((ch = getchar()) != '\n' && ch != EOF);
+}
 
 int main() {
-    // Sugestão: Defina variáveis separadas para cada atributo da cidade.
-    // Exemplos de atributos: código da cidade, nome, população, área, PIB, número de pontos turísticos.
-    
-    // Cadastro das Cartas:
-    // Sugestão: Utilize a função scanf para capturar as entradas do usuário para cada atributo.
-    // Solicite ao usuário que insira as informações de cada cidade, como o código, nome, população, área, etc.
-    
-    // Exibição dos Dados das Cartas:
-    // Sugestão: Utilize a função printf para exibir as informações das cartas cadastradas de forma clara e organizada.
-    // Exiba os valores inseridos para cada atributo da cidade, um por linha.
+    Carta c1;
+    printf("Carta 1 \n");
+    buf();
+    printf("Estado: ");
+    scanf(" %c", &c1.estado);
+    buf();
+    printf("Codigo: ");
+    fgets(c1.codigo, sizeof(c1.codigo), stdin);
+    printf("Cidade: ");
+    fgets(c1.cidade, sizeof(c1.cidade), stdin);
+    printf("Populacao: ");
+    scanf(" %d", &c1.populacao);
+    buf();
+    printf("Area: ");
+    scanf(" %.2f", &c1.area);
+    buf();
+    printf("PIB: ");
+    scanf(" %.2f", &c1.pib);
+    buf();
+    printf("Pontos turisticos: ");
+    scanf(" %d", &c1.turist);
+    printf("\n");
+    buf();
 
+    Carta c2;
+    printf("Carta 2 \n");
+    buf();
+    printf("Estado: ");
+    scanf(" %c", &c2.estado);
+    buf();
+    printf("Codigo: ");
+    fgets(c1.codigo, sizeof(c2.codigo), stdin);
+    printf("Cidade: ");
+    fgets(c1.cidade, sizeof(c2.cidade), stdin);
+    printf("Populacao: ");
+    scanf(" %d", &c2.populacao);
+    buf();
+    printf("Area: ");
+    scanf(" %.2f", &c2.area);
+    buf();
+    printf("PIB: ");
+    scanf(" %.2f", &c2.pib);
+    buf();
+    printf("Pontos turisticos: ");
+    scanf(" %d", &c2.turist);
+    printf("\n");
+    buf();
+    
     return 0;
 }
