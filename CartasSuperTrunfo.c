@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 typedef struct Carta
 {
@@ -27,23 +28,46 @@ typedef struct Carta
 
     }
 
-} */
+}*/
 
-void comparar(double a, double b) {
+//Funcao para comparar as structs
+void comparar(double a, double b)
+{
+    printf("\n");
+    if (a > b)
+    {
+        printf("CARTA 1 VENCEU\n");
 
-        if (a > b) {
-        printf("Carta 1 venceu\n");
+    }
+    else if (a < b)
+    {
+        printf("CARTA 2 VENCEU\n");
 
-        } else if (a < b) {
-        printf("Carta 2 venceu\n");
-
-        } else if (a == b) {
-        printf("Empate\n");
+    }
+    else if (a == b)
+    {
+        printf("EMPATE\n");
 
     }
 }
+void compararD(double a, double b)
+{
+    printf("\n");
+    if (a > b)
+    {
+        printf("CARTA 2 VENCEU\n");
+    }
+    else if (a < b)
+    {
+        printf("CARTA 1 VENCEU\n");
+    }
+    else if (a == b)
+    {
+        printf("EMPATE\n");
+    }
+}
 
-//Função para limpeza de Buffer 
+//Função para limpeza de Buffer
 void buf()
 {
     int ch;
@@ -52,6 +76,7 @@ void buf()
 
 int main()
 {
+    int atributo;
     Carta c1;
     printf("Carta 1 \n");
     printf("Estado: ");
@@ -119,25 +144,82 @@ int main()
 
     printf("\n");
 
-    //Comparação
-    printf("                        Super Trunfo\n");
-    printf("---------------------------------------------------------------------------------------");
-    printf("\n");
-    printf("Populacao: ");
-    comparar(c1.populacao, c2.populacao);
-    printf("Area: ");
-    comparar(c1.area, c2.area);
-    printf("PIB: ");
-    comparar(c1.pib, c2.pib);
-    printf("Pontos turisticos: ");
-    comparar(c1.turist, c2.turist);
-    printf("Densidade Populacional: ");
-    comparar(c1.densi, c2.densi);
-    printf("PIB per capita: ");
-    comparar(c1.pib, c2.pib);
-    printf("Poder: ");
-    comparar(c1.poder, c2.poder);
+    char entrada[10];
+    //Opcoes para o usuario
+    do
+    {
+        printf("                        Super Trunfo\n");
+        printf("---------------------------------------------------------------------------------------\n");
+        printf("Escolha um atributo: \n");
+        printf("\n");
+        printf("1. Populacao\n");
+        printf("2. Area\n");
+        printf("3. Densidade Populacional\n");
+        printf("4. PIB\n");
+        printf("5. PIB per capita\n");
+        printf("6. Pontos Turisticos\n");
+        printf("7. Poder da carta\n");
+        printf("\n");
+        printf("Selecione a opcao: ");
+        fgets(entrada, sizeof(entrada), stdin);
 
+        //Forca o usuario a digitar algo valido (int) para continuar
+        if (sscanf(entrada, "%d", &atributo) == 1)
+        {
+
+            //Escolha do atributo (numero)
+            switch(atributo)
+            {
+            case 1:
+                printf("Populacao: \n");
+                printf("O MAIOR vence!\n");
+                comparar(c1.populacao, c2.populacao);
+                printf("---------------------------------------------------------------------------------------\n");
+                break;
+            case 2:
+                printf("Area: \n");
+                printf("O MAIOAR vence!\n");
+                comparar(c1.area, c2.area);
+                printf("---------------------------------------------------------------------------------------\n");
+                break;
+            case 3:
+                printf("Densidade Populacional: \n");
+                printf("O MENOR vence!\n");
+                compararD(c1.densi, c2.densi);
+                printf("---------------------------------------------------------------------------------------\n");
+                break;
+            case 4:
+                printf("PIB: \n");
+                printf("O MAIOR vence!\n");
+                comparar(c1.pib, c2.pib);
+                printf("---------------------------------------------------------------------------------------\n");
+                break;
+            case 5:
+                printf("PIB per capita: \n");
+                printf("O MAIOR vence!\n");
+                comparar(c1.pib, c2.pib);
+                printf("---------------------------------------------------------------------------------------\n");
+                break;
+            case 6:
+                printf("Pontos turisticos: \n");
+                printf("O MAIOR vence!\n");
+                comparar(c1.turist, c2.turist);
+                printf("---------------------------------------------------------------------------------------\n");
+                break;
+            case 7:
+                printf("Poder: \n");
+                printf("O MAIOR vence!\n");
+                comparar(c1.poder, c2.poder);
+                printf("---------------------------------------------------------------------------------------\n");
+                break;
+            default:
+                printf("Opcao invalida\n");
+                printf("\n");
+                printf("---------------------------------------------------------------------------------------\n");
+            }
+        }
+    }
+    while (atributo < 1 || atributo > 7);
 
 
     return 0;
