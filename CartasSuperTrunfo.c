@@ -43,7 +43,7 @@ void comparar(double a, double b) {
     }
 }
 
-//Função para limpeza de Buffer
+//Função para limpeza de Buffer 
 void buf()
 {
     int ch;
