@@ -34,37 +34,17 @@ typedef struct Carta
 void comparar(double a, double b)
 {
     printf("\n");
-    if (a > b)
-    {
-        printf("CARTA 1 VENCEU\n");
-
-    }
-    else if (a < b)
-    {
-        printf("CARTA 2 VENCEU\n");
-
-    }
-    else if (a == b)
-    {
-        printf("EMPATE\n");
-
-    }
+    (a > b) ? printf("CARTA 1 VENCEU\n") :
+    (a < b) ? printf("CARTA 2 VENCEU\n") :
+    printf("EMPATE\n");
 }
+//Comparar a Densidade Populacional (Inverso)
 void compararD(double a, double b)
 {
     printf("\n");
-    if (a > b)
-    {
-        printf("CARTA 2 VENCEU\n");
-    }
-    else if (a < b)
-    {
-        printf("CARTA 1 VENCEU\n");
-    }
-    else if (a == b)
-    {
-        printf("EMPATE\n");
-    }
+    (a > b) ? printf("CARTA 2 VENCEU\n") :
+    (a < b) ? printf("CARTA 1 VENCEU\n") :
+    printf("EMPATE\n");
 }
 
 //Função para limpeza de Buffer
@@ -171,43 +151,43 @@ int main()
             switch(atributo)
             {
             case 1:
-                printf("Populacao: \n");
+                printf("Populacao: ");
                 printf("O MAIOR vence!\n");
                 comparar(c1.populacao, c2.populacao);
                 printf("---------------------------------------------------------------------------------------\n");
                 break;
             case 2:
-                printf("Area: \n");
-                printf("O MAIOAR vence!\n");
+                printf("Area: ");
+                printf("O MAIOR vence!\n");
                 comparar(c1.area, c2.area);
                 printf("---------------------------------------------------------------------------------------\n");
                 break;
             case 3:
-                printf("Densidade Populacional: \n");
+                printf("Densidade Populacional: ");
                 printf("O MENOR vence!\n");
                 compararD(c1.densi, c2.densi);
                 printf("---------------------------------------------------------------------------------------\n");
                 break;
             case 4:
-                printf("PIB: \n");
+                printf("PIB: ");
                 printf("O MAIOR vence!\n");
                 comparar(c1.pib, c2.pib);
                 printf("---------------------------------------------------------------------------------------\n");
                 break;
             case 5:
-                printf("PIB per capita: \n");
+                printf("PIB per capita: ");
                 printf("O MAIOR vence!\n");
                 comparar(c1.pib, c2.pib);
                 printf("---------------------------------------------------------------------------------------\n");
                 break;
             case 6:
-                printf("Pontos turisticos: \n");
+                printf("Pontos turisticos: ");
                 printf("O MAIOR vence!\n");
                 comparar(c1.turist, c2.turist);
                 printf("---------------------------------------------------------------------------------------\n");
                 break;
             case 7:
-                printf("Poder: \n");
+                printf("Poder: ");
                 printf("O MAIOR vence!\n");
                 comparar(c1.poder, c2.poder);
                 printf("---------------------------------------------------------------------------------------\n");
