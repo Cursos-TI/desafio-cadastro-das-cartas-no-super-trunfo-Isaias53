@@ -27,7 +27,7 @@ typedef struct Carta
 
     }
 
-}*/
+} */
 
 void comparar(double a, double b) {
 
