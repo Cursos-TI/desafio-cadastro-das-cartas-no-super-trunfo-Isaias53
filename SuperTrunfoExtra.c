@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-    //Struct Carta
+    //Struct Carta 
     typedef struct Carta {
         char estado[3];
         char codigo[50];
